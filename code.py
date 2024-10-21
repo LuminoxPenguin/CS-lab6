@@ -5,8 +5,10 @@ def encode(password):
     encoded_password_list = []
     encoded_password_string = ""
     for character in password:
+        #Encoding Process
         encoded_password_list.append(int(character) + 3)
     for item in encoded_password_list:
+        #Subtracts 10 if number is 2 digits
         if item > 9:
             encoded_password_string += str(item-10)
         else:
