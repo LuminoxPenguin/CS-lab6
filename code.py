@@ -4,19 +4,18 @@
 def encode(password):
     encoded_password_list = []
     encoded_password_string = ""
+    
     for character in password:
-        #Encoding Process
         encoded_password_list.append(int(character) + 3)
+    
     for item in encoded_password_list:
-        #Subtracts 10 if number is 2 digits
-        if item > 9:
-            encoded_password_string += str(item-10)
-        else:
-            encoded_password_string += str(item)
+        encoded_password_string += str(item % 10)
+
     return encoded_password_string
     
 
 if __name__ == "__main__":
+    Inputted_Password = False
     while True:
         #Menu
         print("Menu")
@@ -32,9 +31,13 @@ if __name__ == "__main__":
             decoded_password = input("Please enter your password to encode: ")
             encoded_password = encode(decoded_password)
             print("Your password has been encoded and stored!", end = "\n\n")
+            Inputted_Password = True
         #Decode Option
         elif choice == "2":
-            print("In Progress")
+            if Inputted_Password:
+                print(f"The encoded password is {encoded_password}, and the original password is {decode(encoded_password)}.")
+            else:
+                print("Please encode a password before you decode")
         #Quit Option
         elif choice == "3":
             break
