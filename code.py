@@ -42,7 +42,7 @@ if __name__ == "__main__":
         #Decode Option
         elif choice == "2":
             if Inputted_Password:
-                print(f"The encoded password is {encoded_password}, and the original password is {decode(encoded_password)}.")
+                print(f"The encoded password is {encoded_password}, and the original password is {decode_password(encoded_password)}.")
             else:
                 print("Please encode a password before you decode")
         #Quit Option
