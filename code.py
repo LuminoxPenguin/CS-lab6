@@ -13,6 +13,13 @@ def encode(password):
 
     return encoded_password_string
     
+#Decode (Callum)     
+def decode_password(encoded_password):
+    password = ""
+    for digit in encoded_password:
+        shifted_digit = str((int(digit) - 3) % 10)
+        password += shifted_digit
+    return password
 
 if __name__ == "__main__":
     Inputted_Password = False
